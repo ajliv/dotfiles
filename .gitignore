@@ -1,3 +1,30 @@
+# Node.js
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Bower
+.bower-cache
+.bower-registry
+.bower-tmp
+bower_components
+
+# Sublime Text cache files
+*.stTheme.cache
+*.tmlanguage.cache
+*.tmPreferences.cache
+
+# Sublime Text workspace files
+*.sublime-workspace
+
+# Dropbox settings and caches
+.dropbox
+.dropbox.attr
+.dropbox.cache
+
 # Compiled Python files
 *.pyc
 

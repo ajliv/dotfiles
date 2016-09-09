@@ -1,0 +1,11 @@
+# Set GOPATH
+export GOPATH="$HOME/Go";
+
+# Add installed Go binaries to `$PATH`
+export PATH="$GOPATH/bin:$PATH";
+
+#Set COMPOSER_HOME
+export COMPOSER_HOME="$HOME/.composer";
+
+# Add global composer packages to `$PATH`
+export PATH="$COMPOSER_HOME/vendor/bin:$PATH";

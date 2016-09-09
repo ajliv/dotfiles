@@ -32,6 +32,7 @@ brew install composer
 brew install git
 brew install git-lfs
 brew install go
+brew install gpg
 brew install graphicsmagick
 brew install hub
 brew install imagemagick --with-webp
