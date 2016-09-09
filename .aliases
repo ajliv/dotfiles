@@ -9,15 +9,15 @@ alias ~="cd ~ && clear" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias dbx="cd ~/Documents/Dropbox"
+alias dbx="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
-alias g="cd ~/git"
+alias s="cd ~/Git"
 alias h="history"
 alias j="jobs"
 
 # Map hub to git
+alias g="git"
 alias git="hub"
 
 # Detect which `ls` flavor is in use
