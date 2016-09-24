@@ -45,6 +45,9 @@ alias ls="command ls ${colorflag}"
 alias cls='clear'
 alias dir='ls'
 
+# Docker commands
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Command}}\t{{.Names}}\t{{.Status}}"'
+
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
