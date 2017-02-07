@@ -15,7 +15,7 @@ alias dt="cd ~/Desktop"
 alias s="cd ~/Git"
 alias h="history"
 alias j="jobs"
-alias c="clear"
+alias c="cls"
 
 # Map hub to git
 alias g="git"
@@ -43,7 +43,6 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias ls="command ls ${colorflag}"
 
 # Windows style
-alias cls='clear'
 alias dir='ls'
 
 # Docker commands

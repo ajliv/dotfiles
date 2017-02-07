@@ -265,3 +265,7 @@ function gi() {
 function as() {
     cd ~/${2:-Git}/adult-swim-$1
 }
+
+function cls() {
+    clear && archey
+}
