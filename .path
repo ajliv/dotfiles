@@ -9,3 +9,6 @@ export COMPOSER_HOME="$HOME/.composer";
 
 # Add global composer packages to `$PATH`
 export PATH="$COMPOSER_HOME/vendor/bin:$PATH";
+
+# Add Homebrew's sbin
+export PATH="/usr/local/sbin:$PATH";
