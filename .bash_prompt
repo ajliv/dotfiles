@@ -77,7 +77,7 @@ white="\033[0;37m";
 PS1="\[${reset}\]\n";
 PS1+="\[${magenta}\]\A "; # timestamp hh:mm
 # PS1+="\[${white}\]\u@\h "; # username@hostname
-PS1+="\[${black}\]\W "; # working directory full path
+PS1+="\[${cyan}\]\W "; # working directory full path
 PS1+="\$(prompt_git \"\[${white}\]\")"; # Git repository details
 PS1+="\[${white}\]\\[${reset}\]"; # `$` (and reset color)
 export PS1;
