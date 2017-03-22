@@ -267,5 +267,5 @@ function as() {
 }
 
 function cls() {
-    clear && archey
+    clear && archey -o
 }
