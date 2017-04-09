@@ -56,7 +56,7 @@ prompt_git() {
 		[ -n "${s}" ] && s=" [${s}]";
 
         # echo -e "${1}(${branchName})${2}${s}";
-		echo -e "${1}(${branchName})${2} ";
+		echo -e "${1}(${branchName})${2}";
 	else
 		return;
 	fi;
@@ -78,8 +78,8 @@ PS1="\[${reset}\]\n";
 PS1+="\[${magenta}\]\A "; # timestamp hh:mm
 # PS1+="\[${white}\]\u@\h "; # username@hostname
 PS1+="\[${cyan}\]\W "; # working directory full path
-PS1+="\$(prompt_git \"\[${white}\]\")"; # Git repository details
-PS1+="\[${white}\]\\[${reset}\]"; # `$` (and reset color)
+PS1+="\$(prompt_git \"\[${reset}\]\") "; # Git repository details
+PS1+="\[${reset}\]\\[${reset}\]🦉  "; # `$` (and reset color)
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
