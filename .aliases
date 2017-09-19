@@ -16,6 +16,8 @@ alias s="cd ~/Git"
 alias h="history"
 alias j="jobs"
 alias c="cls"
+alias hc="harbor-compose"
+alias dc="docker-compose"
 
 # Map hub to git
 alias g="git"
