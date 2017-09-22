@@ -28,3 +28,7 @@ export LESS_TERMCAP_md="${yellow}";
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
+
+# AWS SAML
+export ADFS_DOMAIN='Turner';
+export ADFS_URL='https://sts.turner.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=urn:amazon:webservices';
