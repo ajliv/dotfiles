@@ -18,6 +18,7 @@ alias j="jobs"
 alias c="cls"
 alias hc="harbor-compose"
 alias dc="docker-compose"
+alias tf="terraform"
 
 # Map hub to git
 alias g="git"

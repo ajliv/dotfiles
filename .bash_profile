@@ -21,6 +21,9 @@ shopt -s cdspell;
 # Alias thefuck
 eval $(thefuck --alias)
 
+# load ebenv
+eval "$(rbenv init -)"
+
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
