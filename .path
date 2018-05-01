@@ -12,3 +12,6 @@ export PATH="$COMPOSER_HOME/vendor/bin:$PATH";
 
 # Add Homebrew's sbin
 export PATH="/usr/local/sbin:$PATH";
+
+# OpenSSL
+export PATH="/usr/local/opt/openssl/bin:$PATH";
