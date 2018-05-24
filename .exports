@@ -36,5 +36,5 @@ export ADFS_DOMAIN='Turner';
 export ADFS_URL='https://sts.turner.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=urn:amazon:webservices';
 
 # AWS
-export AWS_REGION=us-east-1
+export AWS_DEFAULT_REGION=us-east-1
 export AWS_PROFILE=$(awsprof adultswim)

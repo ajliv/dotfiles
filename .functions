@@ -273,6 +273,7 @@ function cls() {
 # set AWS_PROFILE for current session
 function setaws() {
     local profile=$(awsprof "$1");
+    local region="$2";
 
     if [ -z "$profile" ]
     then
@@ -282,9 +283,9 @@ function setaws() {
         echo "setaws: AWS_PROFILE set to \"$profile\"";
     fi
 
-    if [ ! -z "$2" ]
+    if [ ! -z "$region" ]
     then
-        export AWS_REGION="$2";
-        echo "setaws: AWS_REGION set to \"$2\"";
+        export AWS_DEFAULT_REGION="$region";
+        echo "setaws: AWS_DEFAULT_REGION set to \"$region\"";
     fi
 }
