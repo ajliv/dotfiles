@@ -269,3 +269,17 @@ function as() {
 function cls() {
     clear && archey -o
 }
+
+# set AWS_PROFILE for current session
+function setaws() {
+    local profile=$(awsprof "$1");
+
+    if [ -z "$profile" ]
+    then
+        return 1;
+    else
+        export AWS_PROFILE="$profile";
+        echo "setaws: AWS_PROFILE set to \"$profile\"";
+        return 0;
+    fi
+}
