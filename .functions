@@ -280,6 +280,11 @@ function setaws() {
     else
         export AWS_PROFILE="$profile";
         echo "setaws: AWS_PROFILE set to \"$profile\"";
-        return 0;
+    fi
+
+    if [ ! -z "$2" ]
+    then
+        export AWS_REGION="$2";
+        echo "setaws: AWS_REGION set to \"$2\"";
     fi
 }
