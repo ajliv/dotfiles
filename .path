@@ -15,3 +15,6 @@ export PATH="/usr/local/sbin:$PATH";
 
 # OpenSSL
 export PATH="/usr/local/opt/openssl/bin:$PATH";
+
+# Python scripts
+export PATH="$(python -m site --user-base)/bin:$PATH";
