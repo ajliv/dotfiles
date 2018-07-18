@@ -18,7 +18,11 @@ alias j="jobs"
 alias c="cls"
 alias hc="harbor-compose"
 alias dc="docker-compose"
+
 alias tf="terraform"
+alias tfa="terraform apply"
+alias tfi="terraform init"
+alias tfp="terraform plan"
 
 # Map hub to git
 alias g="git"
