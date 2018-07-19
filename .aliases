@@ -19,6 +19,14 @@ alias c="cls"
 alias hc="harbor-compose"
 alias dc="docker-compose"
 
+# Fargate
+alias f="fargate"
+alias fsd="fargate service deploy"
+alias fse="fargate service env"
+alias fsi="fargate service info"
+alias fsw="watch -t -n 5 --color fargate service info"
+
+# Terraform
 alias tf="terraform"
 alias tfa="terraform apply"
 alias tfi="terraform init"
