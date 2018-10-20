@@ -29,6 +29,7 @@ alias fsw="watch -t -n 5 --color fargate service info"
 # Terraform
 alias tf="terraform"
 alias tfa="terraform apply"
+alias tfd="terraform destroy"
 alias tfi="terraform init"
 alias tfo="terraform output"
 alias tfp="terraform plan"
@@ -36,6 +37,7 @@ alias tfp="terraform plan"
 # Map hub to git
 alias g="git"
 alias git="hub"
+alias gh="hub browse"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -180,4 +182,4 @@ alias reload="exec $SHELL -l"
 # AWS SAML
 alias awsprofs='docker run --rm -v ~/.aws:/aws turnerlabs/samlkeygen list-profiles'
 alias awsprof='docker run --rm -v ~/.aws:/aws turnerlabs/samlkeygen select-profile'
-alias samld='docker run -it --rm -v "${AWS_DIR:-$HOME/.aws}:/aws" -e "USER=$USER" -e "ADFS_DOMAIN=$ADFS_DOMAIN" -e "ADFS_URL=$ADFS_URL" turnerlabs/samlkeygen authenticate --all-accounts'
+alias samld='docker run -it --rm -v "${AWS_DIR:-$HOME/.aws}:/aws" -e USER -e ADFS_DOMAIN -e ADFS_URL turnerlabs/samlkeygen authenticate --all-accounts --verbose'
