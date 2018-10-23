@@ -6,22 +6,11 @@ logs
 *.log
 npm-debug.log*
 
-# MEGASync
-.debris
-
 # Bower
 .bower-cache
 .bower-registry
 .bower-tmp
 bower_components
-
-# Sublime Text cache files
-*.stTheme.cache
-*.tmlanguage.cache
-*.tmPreferences.cache
-
-# Sublime Text workspace files
-*.sublime-workspace
 
 # Dropbox settings and caches
 .dropbox
