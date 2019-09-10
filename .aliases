@@ -9,13 +9,10 @@ alias ~="cd ~ && clear" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias gd="cd ~/Google\ Drive"
-alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias s="cd ~/Git"
 alias c="cls"
-alias hc="harbor-compose"
 alias dc="docker-compose"
 
 # Fargate
@@ -23,6 +20,7 @@ alias f="fargate"
 alias fsd="fargate service deploy"
 alias fse="fargate service env"
 alias fsi="fargate service info"
+alias fsl="fargate service logs"
 alias fsw="watch -t -n 5 --color fargate service info"
 
 # Terraform
@@ -130,4 +128,4 @@ alias reload="exec $SHELL -l"
 # AWS SAML
 alias awsprofs='docker run --rm -v ~/.aws:/aws turnerlabs/samlkeygen list-profiles'
 alias awsprof='docker run --rm -v ~/.aws:/aws turnerlabs/samlkeygen select-profile'
-alias samld='docker run -it --rm -v "${AWS_DIR:-$HOME/.aws}:/aws" -e USER -e ADFS_DOMAIN -e ADFS_URL turnerlabs/samlkeygen authenticate --all-accounts --verbose'
+alias samld='docker run -it --rm -v "${AWS_DIR:-$HOME/.aws}:/aws" -e USER -e ADFS_DOMAIN -e ADFS_URL turnerlabs/samlkeygen authenticate --all-accounts'
