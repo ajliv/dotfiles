@@ -214,3 +214,41 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 		man "$@"
 }
+
+# Rotate CICD keys for CircleCI
+rotate_keys() {
+    terraform init
+
+    # destroy and recreate access key
+    terraform destroy -auto-approve -target aws_iam_access_key.cicd_keys
+    terraform apply -auto-approve -target aws_iam_access_key.cicd_keys
+
+    # get new access key values from terraform state
+    access_key_id=$(terraform state show aws_iam_access_key.cicd_keys | grep -E 'id\s+=\s+(\w+)' | awk '{print $3}')
+    secret_access_key=$(terraform state show aws_iam_access_key.cicd_keys | grep -E 'secret\s+=\s+(\w+)' | awk '{print $3}')
+
+    # git the repo name from git config
+    name=$(repo)
+
+    echo "Updating CICD keys for $name..."
+
+    # set new keys in circleci via api
+    curl --request POST \
+        --url "https://circleci.com/api/v1.1/project/gh/$name/envvar?circle-token=$CIRCLECI_CLI_TOKEN" \
+        --header "content-type: application/json" \
+        --data '{"name":"AWS_ACCESS_KEY_ID","value":"'"$access_key_id"'"}'
+
+    echo -e "\n"
+
+    curl --request POST \
+        --url "https://circleci.com/api/v1.1/project/gh/$name/envvar?circle-token=$CIRCLECI_CLI_TOKEN" \
+        --header "content-type: application/json" \
+        --data '{"name":"AWS_SECRET_ACCESS_KEY","value":"'"$secret_access_key"'"}'
+
+    echo -e "\nDone."
+}
+
+repo() {
+    repo=$(git remote get-url origin | cut -d':' -f2 | cut -d'.' -f1)
+    echo "$repo"
+}
