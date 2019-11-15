@@ -228,20 +228,21 @@ rotate_keys() {
     secret_access_key=$(terraform state show aws_iam_access_key.cicd_keys | grep -E 'secret\s+=\s+(\w+)' | awk '{print $3}')
 
     # git the repo name from git config
-    name=$(repo)
+    name=$(git remote get-url origin | perl -n -e '/([a-z0-9-]+\/[a-z0-9-]+).git$/ && print $1')
 
-    echo "Updating CICD keys for $name..."
+    echo "Adding AWS_ACCESS_KEY_ID to CircleCI for $name..."
 
     # set new keys in circleci via api
     curl --request POST \
-        --url "https://circleci.com/api/v1.1/project/gh/$name/envvar?circle-token=$CIRCLECI_CLI_TOKEN" \
+        --url "https://circleci.com/api/v1.1/project/gh/$name/envvar?circle-token=$CIRCLECI_TOKEN" \
         --header "content-type: application/json" \
         --data '{"name":"AWS_ACCESS_KEY_ID","value":"'"$access_key_id"'"}'
 
     echo -e "\n"
+    echo "Adding AWS_SECRET_ACCESS_KEY to CircleCI for $name..."
 
     curl --request POST \
-        --url "https://circleci.com/api/v1.1/project/gh/$name/envvar?circle-token=$CIRCLECI_CLI_TOKEN" \
+        --url "https://circleci.com/api/v1.1/project/gh/$name/envvar?circle-token=$CIRCLECI_TOKEN" \
         --header "content-type: application/json" \
         --data '{"name":"AWS_SECRET_ACCESS_KEY","value":"'"$secret_access_key"'"}'
 
