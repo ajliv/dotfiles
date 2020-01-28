@@ -31,6 +31,9 @@ export LESS_TERMCAP_md="${yellow}";
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
+# For pkg-config to find openssl@1.1:
+export PKG_CONFIG_PATH="(brew --prefix openssl@1.1)/lib/pkgconfig"
+
 # AWS SAML
 export ADFS_DOMAIN='Turner';
 export ADFS_URL='https://sts.turner.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=urn:amazon:webservices';

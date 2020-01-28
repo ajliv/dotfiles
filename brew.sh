@@ -5,18 +5,30 @@
 # Make sure we’re using the latest Homebrew.
 brew update
 
+# add homebrew-cask-fonts
+brew tap homebrew/cask-fonts
+
 # Upgrade any already-installed formulae.
 brew upgrade
 
+# Save Homebrew’s installed location.
+BREW_PREFIX=$(brew --prefix)
+
+# Install GNU core utilities (those that come with macOS are outdated).
+# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+brew install coreutils
+ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-grep -qxF "/usr/local/bin/bash" /etc/shells || sudo echo "/usr/local/bin/bash" >> /etc/shells
-brew install bash bash-completion
+grep -qxF "${BREW_PREFIX}/bin/bash" /etc/shells || sudo echo "${BREW_PREFIX}/bin/bash" >> /etc/shells
+brew install bash
+brew install bash-completion@2
 
 # Switch to using brew-installed bash as default shell
-if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
+if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+  chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
 # Install more recent versions of some macOS tools.
@@ -25,7 +37,6 @@ brew install \
   awscli \
   azure-cli \
   circleci \
-  composer \
   curl \
   docker-completion \
   docker-compose-completion \

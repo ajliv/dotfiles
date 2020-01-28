@@ -1,17 +1,17 @@
 # Add installed Go binaries to `$PATH`
 export PATH="$GOPATH/bin:$PATH";
 
-# Add global composer packages to `$PATH`
-export PATH="$COMPOSER_HOME/vendor/bin:$PATH";
-
 # Add Homebrew's sbin
 export PATH="$(brew --prefix)/sbin:$PATH";
 
+# Add Homebrew installation of GNU core utilities
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH";
+
 # OpenSSL
-export PATH="$(brew --prefix)/opt/openssl/bin:$PATH";
+export PATH="$(brew --prefix openssl@1.1)/bin:$PATH";
 
 # Use Homebrew installation of Python 3
-export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH";
+export PATH="$(brew --prefix python)/libexec/bin:$PATH";
 
 # Python scripts
 export PATH="$(python -m site --user-base)/bin:$PATH";
