@@ -24,3 +24,4 @@ export PATH="$(python -m site --user-base)/bin:$PATH";
 
 # Use Terraform 0.11
 # export PATH="/usr/local/opt/terraform@0.11/bin:$PATH";
+# ln -s /usr/local/opt/terraform@0.11/bin/terraform $HOME/bin/terraform11

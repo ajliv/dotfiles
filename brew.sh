@@ -6,13 +6,12 @@
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install Bash 4.
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
-# running `chsh`.
-brew install bash
-brew install bash-completion@2
+# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
+grep -qxF "/usr/local/bin/bash" /etc/shells || sudo echo "/usr/local/bin/bash" >> /etc/shells
+brew install bash bash-completion
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
@@ -21,61 +20,85 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
 fi;
 
 # Install more recent versions of some macOS tools.
-brew install archey
-brew install awscli
-brew install circleci
-brew install dep
-brew install docker-completion
-brew install docker-compose-completion
-brew install docker-machine-completion
-brew install firebase-cli
-brew install git
-brew install git-lfs
-brew install go
-brew install grep
-brew install hub
-brew install jq
-brew install rbenv
-brew install terraform
-brew install thefuck
-brew install tree
-brew install vim --override-system-vi
-brew install watch
-brew install yarn
+brew install \
+  archey \
+  awscli \
+  azure-cli \
+  circleci \
+  curl \
+  docker-completion \
+  docker-compose-completion \
+  docker-machine-completion \
+  firebase-cli \
+  git \
+  git-lfs \
+  go \
+  hub \
+  jq \
+  mkcert \
+  node \
+  nss \
+  perl \
+  python \
+  rbenv \
+  redis \
+  ruby \
+  terraform \
+  terraform@0.11 \
+  tflint \
+  thefuck \
+  tree \
+  vim \
+  watch \
+  yarn
 
 # Caskroom Apps
-
-brew cask install adobe-creative-cloud
-brew cask install alfred
-brew cask install appcleaner
-brew cask install bartender
-brew cask install caret
-brew cask install charles
-brew cask install dash
-brew cask install docker
-brew cask install dropbox
-brew cask install filezilla
-brew cask install firefox
-brew cask install flow
-brew cask install font-hasklig
-brew cask install github
-brew cask install google-backup-and-sync
-brew cask install google-chrome
-brew cask install imageoptim
-brew cask install iterm2
-brew cask install keepingyouawake
-brew cask install kitematic
-brew cask install logitech-control-center
-brew cask install postman
-brew cask install qlcolorcode
-brew cask install qlimagesize
-brew cask install qlmarkdown
-brew cask install qlstephen
-brew cask install sip
-brew cask install slack
-brew cask install spectacle
-brew cask install the-unarchiver
-brew cask install visual-studio-code
+brew cask install \
+  1password \
+  1password-cli \
+  adobe-creative-cloud \
+  alfred \
+  anylist \
+  bartender \
+  caret \
+  dash \
+  docker \
+  dropbox \
+  firefox \
+  flow \
+  font-cascadia \
+  font-fantasque-sans-mono \
+  font-fira-code \
+  font-hack \
+  font-hasklig \
+  font-ia-writer-duo \
+  font-ia-writer-mono \
+  font-ibm-plex \
+  font-jetbrains-mono \
+  font-lora \
+  font-victor-mono \
+  github \
+  google-backup-and-sync \
+  google-chrome \
+  google-cloud-sdk \
+  imageoptim \
+  insomnia \
+  iterm2 \
+  keepingyouawake \
+  kitematic \
+  logitech-control-center \
+  microsoft-office \
+  qlcolorcode \
+  qlimagesize \
+  qlmarkdown \
+  qlstephen \
+  qlvideo \
+  sip \
+  slack \
+  spectacle \
+  the-unarchiver \
+  visual-studio-code \
+  vlc
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -35,9 +35,10 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-    . /usr/local/share/bash-completion/bash_completion
-fi
+# if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+#     . /usr/local/share/bash-completion/bash_completion
+# fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
