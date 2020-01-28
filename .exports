@@ -41,3 +41,9 @@ export AWS_PROFILE=aws-adultswim:aws-adultswim-admin
 
 # npm
 export NPM_TOKEN=$(awk -F\//registry.npmjs.org/:_authToken= '{printf $2}' ~/.npmrc)
+
+# Set GOPATH
+export GOPATH="$HOME/Go";
+
+# Set COMPOSER_HOME
+export COMPOSER_HOME="$HOME/.composer";

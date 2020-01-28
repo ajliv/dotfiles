@@ -25,6 +25,7 @@ brew install \
   awscli \
   azure-cli \
   circleci \
+  composer \
   curl \
   docker-completion \
   docker-compose-completion \
@@ -38,6 +39,7 @@ brew install \
   mkcert \
   node \
   nss \
+  openssl@1.1 \
   perl \
   python \
   rbenv \

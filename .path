@@ -1,27 +1,17 @@
-# Set GOPATH
-export GOPATH="$HOME/Go";
-
 # Add installed Go binaries to `$PATH`
 export PATH="$GOPATH/bin:$PATH";
-
-# Set COMPOSER_HOME
-export COMPOSER_HOME="$HOME/.composer";
 
 # Add global composer packages to `$PATH`
 export PATH="$COMPOSER_HOME/vendor/bin:$PATH";
 
 # Add Homebrew's sbin
-export PATH="/usr/local/sbin:$PATH";
+export PATH="$(brew --prefix)/sbin:$PATH";
 
 # OpenSSL
-export PATH="/usr/local/opt/openssl/bin:$PATH";
+export PATH="$(brew --prefix)/opt/openssl/bin:$PATH";
 
 # Use Homebrew installation of Python 3
-export PATH="/usr/local/opt/python/libexec/bin:$PATH";
+export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH";
 
 # Python scripts
 export PATH="$(python -m site --user-base)/bin:$PATH";
-
-# Use Terraform 0.11
-# export PATH="/usr/local/opt/terraform@0.11/bin:$PATH";
-# ln -s /usr/local/opt/terraform@0.11/bin/terraform $HOME/bin/terraform11
