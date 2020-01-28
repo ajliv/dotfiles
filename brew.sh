@@ -5,8 +5,9 @@
 # Make sure we’re using the latest Homebrew.
 brew update
 
-# add homebrew-cask-fonts
+# taps
 brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 
 # Upgrade any already-installed formulae.
 brew upgrade
@@ -55,7 +56,6 @@ brew install \
   python \
   rbenv \
   redis \
-  ruby \
   terraform \
   terraform@0.11 \
   tflint \
@@ -78,6 +78,7 @@ brew cask install \
   docker \
   dropbox \
   firefox \
+  firefox-developer-edition \
   flow \
   font-cascadia \
   font-fantasque-sans-mono \
