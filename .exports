@@ -50,3 +50,6 @@ export GOPATH="$HOME/Go";
 
 # Set COMPOSER_HOME
 export COMPOSER_HOME="$HOME/.composer";
+
+# Android SDK
+export ANDROID_SDK="~/Library/Android/sdk";
