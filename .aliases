@@ -34,7 +34,8 @@ alias tfp="terraform plan"
 # Map hub to git
 alias g="git"
 alias git="hub"
-alias gh="hub browse"
+alias gb="hub browse"
+alias ghd="open -a \"GitHub Desktop\""
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
