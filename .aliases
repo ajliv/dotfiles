@@ -130,6 +130,3 @@ alias samlkeygen='docker run -it --rm -v "${AWS_DIR:-$HOME/.aws}:/aws" -e USER -
 alias awsprofs='samlkeygen list-profiles'
 alias awsprof='samlkeygen select-profile'
 alias samld='samlkeygen authenticate --all-accounts'
-
-# Terraform@0.11
-alias tf11='terraform11'
